@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show Appointment</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+	<a href="/user/">Back to Home</a>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Patient Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>View Your Appointments</h1>
+	<table border="1" style="width:60%;">
+		<thead>
+			<tr>
+				<th>Doctor Name</th>
+				<th>Department</th>
+				<th>Appointment Date</th>
+				<th>Appointment Time</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="a : ${apps}">
+				<td th:text="${a.dname}"></td>
+				<td th:text="${a.dsp}"></td>
+				<td th:text="${a.date}"></td>
+				<td th:text="${a.time}"></td>
+				<td th:text="${a.status}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

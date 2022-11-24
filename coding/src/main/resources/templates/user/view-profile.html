@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Profile</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+	<a href="/user/">Back to Home</a>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Patient Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>Patient Profile</h1>
+	<table border="2" style="width:50%;">
+		<tbody>
+			<tr>
+				<th>Patient Name</th>
+				<th>[[${patient.name}]]</th>
+				<th><a href="#">Edit</a></th>
+			</tr>
+			<tr>
+				<td align="center">Patient Email</td>
+				<td align="center">[[${patient.email}]]</td>
+				<!-- <th><a href="#">Edit</a></th> -->
+			</tr>
+			<tr>
+				<td align="center">Patient Mobile Number</td>
+				<td align="center">[[${patient.mobileNum}]]</td>
+				<td align="center"><a href="#">Edit</a></td>
+			</tr>
+			<tr>
+				<td align="center">Patient Gender</td>
+				<td align="center">[[${patient.gender}]]</td>
+				<!-- <th><a href="#">Edit</a></th> -->
+			</tr>
+			<tr>
+				<td align="center">Patient Date of Birth</td>
+				<td align="center">[[${patient.dob}]]</td>
+				<td align="center"><a href="#">Edit</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

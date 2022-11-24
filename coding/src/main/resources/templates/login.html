@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--  <html lang="en" xmlns:th="http://thymeleaf.org" th:replace="base::layout(~{::section})"> -->
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient, Doctor & Admin Login Form</title>
+</head>
+<body>
+<section>
+<div align="center" style="">
+	<h1>E-Healthcare System</h1>
+	<div class="card p-5" style="width:50%; background:#ddd; padding:20px;">
+		<h2 style="margin-bottom:10px;">Patient, Doctor & Admin Login Form</h2>
+		<div th:if="${param.error}">
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<p>Credential invalid</p>
+				<!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+			</div>
+		</div>
+		<div th:if="${param.logout}">
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				<p>Logout Successfully</p>
+				<!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+			</div>
+		</div>
+		<form action="/login" method="post">
+			<div class="row">
+				<div class="col"></div>
+				<div class="col">
+					<label>Enter Email: </label>
+				</div>
+				<div class="col">
+					<input type="text" name="username" placeholder="Email"> <br><br>
+				</div>
+				<div class="col"></div>
+			</div>
+			<label>Enter Password: </label><br>
+			<input type="password" name="password" placeholder="Password"> <br><br>
+		
+			<button class="btn btn-primary">login</button>
+			
+			<a href="/">Return Home</a>
+		</form>
+	</div>
+</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor List</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+	<a href="/user/">Back to Home</a>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Patient Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>Doctor View Page</h1>
+</div>
+<div style="display:flex; flex-direction: column; text-align:center;">
+	<div style="padding:10px; flex-grow:1; display:flex; flex-direction:row;
+	 border: solid 1px green;" th:each="d :${doctor}">
+		<div style="flex-grow:2; background:#ddd; display:inline">
+			<h1>Doctor Name: <span th:text="*{d.name}"></span></h1>
+			<p>Doctor Email: <span th:text="*{d.email}"></span></p>
+			<p>Mobile Number: <span th:text="*{d.mobileNum}"></span></p>
+			<p>Gender: <span th:text="*{d.gender}"></span></p>
+			<p>Specialization: <span th:text="*{d.specialization}"></span></p>
+			<p>License Number: <span th:text="*{d.licNum}"></span></p>
+			<a th:href="@{/user/book-appointment/{id}(id=${d.id})}" style="margin-bottom:10px;">Book an Appointment</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

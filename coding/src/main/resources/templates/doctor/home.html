@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- <html lang="en" xmlns:th="http://thymeleaf.org" th:replace="base::layout(~{::section})"> -->
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor Home</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Doctor Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>Doctor Dashboard</h1>
+	<hr>
+	<a href="/doctor/view-profile">View Your Profile</a><br><br>
+	<hr>
+	<!-- <a href="/doctor/find-all-doctor">Book An Appointment</a><br><br> -->
+	<hr>
+	<a href="/doctor/appointments">View Appointments</a><br><br>
+	<hr>
+	
+	<h1>Appointment Requests</h1>
+	<table border="1" style="width: 50%;">
+		<thead>
+			<tr>
+				<th>Patient Name</th>
+				<th>Appointment Date</th>
+				<th>Appointment Time</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="a :${apps}">
+				<td th:text="${a.pName}"></td>
+				<td th:text="${a.date}"></td>
+				<td th:text="${a.time}"></td>
+				<td>
+					<a th:href="@{/doctor/appointment-acc/{id}(id=${a.id})}">Accept</a> | 
+					<a th:href="@{/doctor/appointment-rej/{id}(id=${a.id})}">Reject</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

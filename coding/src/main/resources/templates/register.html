@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- <html lang="en" xmlns:th="http://thymeleaf.org" th:replace="base::layout(~{::section})">-->
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Registration</title>
+<script type="text/javascript">
+	function pwdFun()
+	{
+		var pwd1 = document.getElementById("pwd").value;
+		if(pwd1.length < 8){
+			alert("Password is too short. It contains atleast 8 character");
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+<div align="center">
+	<div th:if="${session.msg}">
+		<p th:text="${session.msg}"></p>
+	</div>
+	<h1>Patient Registration Form</h1>
+	<form action="createPatient" method="post" onsubmit="return pwdFun()">
+	<label>Name: </label>
+	<input type="text" name="name" placeholder="Name" required><br><br>
+	
+	<label>Email: </label>
+	<input type="email" name="email" placeholder="email" required><br><br>
+	
+	<label>Mobile Number: </label>
+	<input type="text" name="mobileNum" placeholder="mobile num" required><br><br>
+	
+	<label>Gender: </label>
+	<input type="radio" name="gender" value="male" required>Male
+	<input type="radio" name="gender" value="female" required>female<br><br>
+	
+	<label>Date of Birth: </label>
+	<input type="date" name="dob" placeholder="dob" required><br><br>
+	
+	<label>Password: </label>
+	<input type="password" name="password" id="pwd" placeholder="password" required><br><br>
+	
+	<button type="submit">register</button>
+	<a href="/">Return Home</a>
+	</form>
+</div>
+</body>
+</html>

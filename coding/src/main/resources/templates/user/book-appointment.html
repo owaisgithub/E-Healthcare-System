@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+	<a href="/user/">Back to Home</a>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Patient Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>Appointment Booking Form</h1>
+	<p>Appointment With : <b>Dr. [[${name}]]</b></p>
+	<form action="/user/booked" method="post" th:object="${apps}">
+		<input type="hidden" th:field="*{patientId}">
+		<input type="hidden" th:field="*{doctorId}">
+		<input type="hidden" th:field="*{status}">
+		
+		<label>Choose Appointment Date : </label>
+		<input type="date" name="appDate"><br><br>
+		
+		<label>Choose Appointment Time Slot : </label>
+		<input type="time" name="appTime"><br><br>
+		
+		<button type="submit">Book</button>
+	</form>
+</div>
+</body>
+</html>

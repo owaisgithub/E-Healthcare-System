@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Doctor</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+	<a href="/doctor/">Back to Home</a>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Doctor Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>Doctor Edit</h1>
+	<form th:action="@{/doctor/update-doctor}" method="post" th:object="${doctor}">
+		<label>Name: </label>
+		<input type="text" th:field="*{name}" readonly><br><br>
+		
+		<label>Email: </label>
+		<input type="email" th:field="*{email}" readonly><br><br>
+		
+		<label>Mobile Number: </label>
+		<input type="text" th:field="*{mobileNum}" required><br><br>
+		
+		<label>Gender: </label>
+		<input type="text" th:field="*{gender}" readonly><br><br>
+		
+		<label>Date of Birth: </label>
+		<input type="date" th:field="*{dob}" required><br><br>
+		
+		<label>Lic Number: </label>
+		<input type="text" th:field="*{licNum}" required><br><br>
+		
+		<label>Degree: </label>
+		<input type="text" th:field="*{degree}" required><br><br>
+		
+		<label>Specialization: </label>
+		<input type="text" th:field="*{specialization}" required><br><br>
+		
+		<!-- 
+		<label>Password: </label>
+		<input type="password" name="password" id="pwd" placeholder="password" required><br><br>
+		-->
+		
+		<button type="submit">Update</button>
+	</form>
+</div>
+</body>
+</html>

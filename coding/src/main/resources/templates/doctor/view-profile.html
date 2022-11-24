@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Doctor Profile</title>
+</head>
+<body>
+<div align="justify" style="margin-left: 100px;">
+	<h2>E-healthcare System</h2>
+	<a href="/user/">Back to Home</a>
+</div>
+<div align="right" style="margin-right: 30px;">
+	<p>Doctor Email : <b>[[${user.email}]]</b> | 
+	<a href="/logout"><b>logout</b></a>
+	</p>
+</div>
+<div align="center">
+	<h1>Doctor Profile</h1>
+	<!-- <a align="center" th:href="@{/doctor/update-profile/{id}(id=${doctor.id})}">Edit Profile</a> -->
+	<table border="2" style="width:50%;">
+		<tbody>
+			<tr>
+				<th>Doctor Name</th>
+				<th>[[${doctor.name}]]</th>
+				<!-- <th><a href="#">Edit</a></th> -->
+			</tr>
+			<tr>
+				<td align="center">Doctor Email</td>
+				<td align="center">[[${doctor.email}]]</td>
+				<!-- <th><a href="#">Edit</a></th> -->
+			</tr>
+			<tr>
+				<td align="center">Doctor Mobile Number</td>
+				<td align="center">[[${doctor.mobileNum}]]</td>
+				<!-- <td align="center"><a href="#">Edit</a></td> -->
+			</tr>
+			<tr>
+				<td align="center">Doctor Gender</td>
+				<td align="center">[[${doctor.gender}]]</td>
+				<!-- <th><a href="#">Edit</a></th> -->
+			</tr>
+			<tr>
+				<td align="center">Doctor Date of Birth</td>
+				<td align="center">[[${doctor.dob}]]</td>
+				<!-- <td align="center"><a href="#">Edit</a></td> -->
+			</tr>
+			<tr>
+				<td align="center">License Number</td>
+				<td align="center">[[${doctor.licNum}]]</td>
+				<!-- <td align="center"><a href="#">Edit</a></td> -->
+			</tr>
+			<tr>
+				<td align="center">Degree</td>
+				<td align="center">[[${doctor.degree}]]</td>
+				<!-- <td align="center"><a href="#">Edit</a></td> -->
+			</tr>
+			<tr>
+				<td align="center">Specialization</td>
+				<td align="center">[[${doctor.specialization}]]</td>
+				<!-- <td align="center"><a href="#">Edit</a></td> -->
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
